@@ -1,0 +1,35 @@
+<h1>Tee Shop Colors</h1>
+
+<section class="container">
+    <div class="one">
+        <ol>
+            <li (click)="showTee('red')"
+                class="red color-border color-width center-text bottom-padding">Red</li>
+
+            <li (click)="showTee('orange')"
+                class="orange color-border color-width center-text bottom-padding">Orange</li>
+
+            <li (click)="showTee('yellow')"
+                class="yellow color-border color-width center-text bottom-padding">Yellow</li>
+
+            <li (click)="showTee('green')"
+                class="green color-border color-width center-text bottom-padding">Green</li>
+
+            <li (click)="showTee('blue')"
+                class="blue color-border color-width center-text bottom-padding">Blue</li>
+
+            <li (click)="showTee('white')"
+                class="white color-border color-width center-text bottom-padding">White</li>
+        </ol>
+    </div>
+    <div class="two">
+        <h4 style="margin-left: 10%;">Color Model</h4>
+        <br />
+        <div class="circle center-text" [ngClass]="getColorChoice()" ></div>
+
+    </div>
+</section>
+
+
+
+
