@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="src\app\design\" />
     <Folder Include="src\app\size\" />
+    <Folder Include="src\app\teeShirtData\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

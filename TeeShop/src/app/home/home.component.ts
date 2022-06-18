@@ -5,4 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+    /**
+     * selected color
+     */
+    colorChoice: string = 'grey';
+
+    /**
+     * selected design
+     */
+    designChoice: string = 'pac-man';
+
+    size: string = <string>{};
 }

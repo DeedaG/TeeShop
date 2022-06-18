@@ -9,9 +9,10 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { ColorComponent } from './color/color.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SizeComponent } from './size/size.component';
 import { DesignComponent } from './design/design.component';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,23 +22,22 @@ import { DesignComponent } from './design/design.component';
     CartComponent,
     ColorComponent,
     SizeComponent,
-    DesignComponent,
-    FetchDataComponent
+    DesignComponent
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
+      HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
         { path: 'cart', component: CartComponent },
         { path: 'size', component: SizeComponent },
         { path: 'design', component: DesignComponent },
-      { path: 'color', component: ColorComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+        { path: 'color', component: ColorComponent }
     ])
   ],
-  providers: [],
+  providers: [ColorComponent, HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,36 @@
 <h1>Tee Shop Colors</h1>
-<p>Unique T Shirts</p>
-<ul>
-  <li>For Laughs</li>
-  <li>Political</li>
-  <li>Animals</li>
-    <li>Floral</li>
-    <li>Kids</li>
-    <li>Special Occasion</li>
-    <li>Unique Quotes</li>
-    <li>Build Your Own</li>
-</ul>
+
+<section class="container">
+    <div class="one">
+        <ol>
+            <li (click)="showTee('Pac Man')"
+                class="red color-border color-width center-text bottom-padding">Pac Man</li>
+
+            <li (click)="showTee('Political')"
+                class="orange color-border color-width center-text bottom-padding">Political</li>
+
+            <li (click)="showTee('Animals')"
+                class="yellow color-border color-width center-text bottom-padding">Animals</li>
+
+            <li (click)="showTee('Floral')"
+                class="green color-border color-width center-text bottom-padding">Floral</li>
+
+            <li (click)="showTee('Kids')"
+                class="blue color-border color-width center-text bottom-padding">Kids</li>
+
+            <li (click)="showTee('Unique Quotes')"
+                class="pink color-border color-width center-text bottom-padding">Unique Quotes</li>
+        </ol>
+    </div>
+    <div class="two">
+        <h4 style="margin-left: 10%;">Design Model</h4>
+        <br />
+        <div class="rectangle center-text" [ngClass]="getColorChoice()">
+            <div class=" oval center-text"></div>
+        </div>
+        <div class="square center-text" [ngClass]="getDesignChoice()">
+            <div class="center-text"></div>
+        </div>
+
+    </div>
+</section>

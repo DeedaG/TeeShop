@@ -1,5 +1,6 @@
 <h1>Tee Shop Colors</h1>
 
+
 <section class="container">
     <div class="one">
         <ol>
@@ -18,14 +19,17 @@
             <li (click)="showTee('blue')"
                 class="blue color-border color-width center-text bottom-padding">Blue</li>
 
-            <li (click)="showTee('white')"
-                class="white color-border color-width center-text bottom-padding">White</li>
+            <li (click)="showTee('pink')"
+                class="pink color-border color-width center-text bottom-padding">Pink</li>
         </ol>
     </div>
     <div class="two">
         <h4 style="margin-left: 10%;">Color Model</h4>
         <br />
-        <div class="circle center-text" [ngClass]="getColorChoice()" ></div>
+        <div class="rectangle center-text" [ngClass]="getColorChoice()">
+            <div class=" oval center-text"></div>
+        </div>
+        <div class="square center-text" [ngClass]="getColorChoice()"></div>
 
     </div>
 </section>

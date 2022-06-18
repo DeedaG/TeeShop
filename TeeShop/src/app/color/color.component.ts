@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-color',
@@ -7,10 +9,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./color.component.scss']
 })
 export class ColorComponent {
-    /**
-     * selected color
+    
+    /*
+     * selected design
      */
-    colorChoice: string = 'grey';
+    designChoice: string = <string>{};
+
+    constructor(private route: ActivatedRoute,
+    private homeData: HomeComponent) { }
+
+    ngOnInit(): void {
+        //this.route.params.subscribe(params => {
+        //    if (params['designChoice']) {
+        //        this.designChoice = designChoice;
+        //    }
+        //});
+    }
 
     /**
      * sets selected color choice to colorChoice string
@@ -18,12 +32,15 @@ export class ColorComponent {
      */
     public showTee(colorChoice: string): void {
         if (colorChoice) {
-            this.colorChoice = colorChoice;
+            this.homeData.colorChoice = colorChoice;
             return;
         }
     }
 
-    public getColorChoice(): void {
-        return this.colorChoice;
+    /**
+     * returns color choice css
+     */
+    public getColorChoice(): string {
+        return this.homeData.colorChoice;
     }
 }
