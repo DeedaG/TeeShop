@@ -1,7 +1,16 @@
 <h1>Tee Shop Colors</h1>
-<p>Unique T Shirts</p>
-<ul>
-  <li>Small</li>
-  <li>Medium</li>
-  <li>Large</li>
-</ul>
+
+<section class="container">
+    <div class="one">
+        <ul>
+            <li (click)="setSize('small')">Small</li>
+            <li (click)="setSize('medium')">Medium</li>
+            <li (click)="setSize('large')">Large</li>
+        </ul>
+    </div>
+    <div class="two">
+        <br />
+        <br />
+        <h1 style="color:red">{{selectedSize}}</h1>
+    </div>
+</section>

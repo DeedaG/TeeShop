@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TShirt } from '../tShirt.model';
 
 @Component({
   selector: 'app-home',
@@ -15,5 +16,18 @@ export class HomeComponent {
      */
     designChoice: string = 'pac-man';
 
-    size: string = <string>{};
+    /**
+     * tee shirt selections
+     */
+    buyTShirt: TShirt = <TShirt>{};
+
+    /**
+     * tee shirt size
+     */
+    teeSize: string = '';
+
+    /**
+     * tee shirt count
+     */
+    count: number = 0;
 }

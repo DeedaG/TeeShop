@@ -1,0 +1,25 @@
+﻿.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.cells {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width: 20%;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.center-design {
+    margin-left: 32%;
+}
+
+.text-blue {
+    text-decoration-color: blue;
+}

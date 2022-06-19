@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -11,8 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { ColorComponent } from './color/color.component';
 import { SizeComponent } from './size/size.component';
 import { DesignComponent } from './design/design.component';
-import { AppLayoutComponent } from './app-layout/app-layout.component';
-import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +23,6 @@ import { AppRoutingModule } from './app-routing.module';
     ColorComponent,
     SizeComponent,
     DesignComponent
-    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

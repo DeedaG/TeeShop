@@ -1,7 +1,39 @@
 <h1>Shopping Cart</h1>
 
-<p>Great taste!</p>
+<h2 style="color:red">{{message}}</h2>
 
-<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+<p aria-live="polite">
+    Current items:
+</p>
+<table class="table" *ngIf="anyItemsInCart()">
+    <thead>
+        <tr>
+            <th class="cells">Color</th>
+            <th class="cells">Design</th>
+            <th class="cells">Size</th>
+            <th class="cells">Count</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="cells">{{homeData.colorChoice}}</td>
+            <td class="cells">{{homeData.designChoice}}</td>
+            <td class="cells">{{homeData.buyTShirt.teeSize}}</td>
+            <td class="cells">
+                {{ homeData.buyTShirt.count }}
+                
+            </td>
+            <td><button class="btn btn-primary" (click)="add()"> Add</button></td>
+            <td><button class="btn btn-primary" (click)="remove()"> Remove</button></td>
+        </tr>
+    </tbody>
+</table>
+        
+        <div class="center-design text-blue">
+            <h2>Total: <strong>${{ total}}</strong>
+            </h2>
+        </div>
+        
 
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>

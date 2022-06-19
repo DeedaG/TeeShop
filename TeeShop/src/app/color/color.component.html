@@ -24,13 +24,20 @@
         </ol>
     </div>
     <div class="two">
-        <h4 style="margin-left: 10%;">Color Model</h4>
+        <div style="float: right">
+            <!--<a (click)="addToCart()" href="javascript:void(0)">
+                <i class="fa fa-plus" ></i>
+            </a>-->
+            <button class="orange" (click)="addToCart()">Buy It</button>
+        </div>
+        <br />
         <br />
         <div class="rectangle center-text" [ngClass]="getColorChoice()">
             <div class=" oval center-text"></div>
         </div>
-        <div class="square center-text" [ngClass]="getColorChoice()"></div>
-
+        <div class="square center-text" [ngClass]="getColorChoice()">
+            <div class="center-design" [ngClass]="getDesignChoice()"></div>
+        </div>
     </div>
 </section>
 

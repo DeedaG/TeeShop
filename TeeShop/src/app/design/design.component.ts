@@ -1,8 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { TShirt } from '../tShirt.model';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-design',
@@ -10,12 +11,6 @@ import { HomeComponent } from '../home/home.component';
     styleUrls: ['./design.component.scss']
 })
 export class DesignComponent {
-    
-
-    /*
-     * selected color
-     */ 
-    //colorChoice: string = <string>{};
 
     constructor(private route: ActivatedRoute,
     private homeData: HomeComponent) { }
@@ -45,7 +40,6 @@ export class DesignComponent {
             cssString = changeCss;
             console.log(cssString);
         }
-        
         return cssString;
     }
 
@@ -54,6 +48,20 @@ export class DesignComponent {
      */
     public getColorChoice(): string {
         return this.homeData.colorChoice;
+    }
+
+    /**
+     *set selections to buyTShirt object
+     */
+    public addToCart(): void {
+        this.homeData.count += 1;
+        let newTee = new TShirt();
+
+        newTee.id = uuidv4();
+        newTee.design = this.homeData.designChoice;
+        newTee.color = this.homeData.colorChoice;
+        newTee.count = this.homeData.count;
+        this.homeData.buyTShirt = newTee;
     }
 
 }
