@@ -29,7 +29,29 @@ export class ColorComponent {
      */
     public showTee(colorChoice: string): void {
         if (colorChoice) {
-            this.homeData.colorChoice = colorChoice;
+            switch (colorChoice) {
+                case 'red':
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/checks-316861_1280.jpg';
+                    break;
+                case 'orange':
+                    this.homeData.colorChoice = 'orange';
+                    break;
+                case 'yellow':
+                    this.homeData.colorChoice = 'yellow';
+                    break;
+                case 'green':
+                    this.homeData.colorChoice = 'green';
+                    break;
+                case 'blue':
+                    this.homeData.colorChoice = 'blue';
+                    break;
+                    case 'pink':
+                    this.homeData.colorChoice = 'pink';
+                    break;
+                    default:
+                    this.homeData.colorChoice = 'grey';
+            }
+            //this.homeData.colorChoice = colorChoice;
             return;
         }
     }
@@ -39,6 +61,13 @@ export class ColorComponent {
      */
     public getColorChoice(): string {
         return this.homeData.colorChoice;
+    }
+
+     /**
+     * returns color choice css
+     */
+    public getColorChoiceURL(): string {
+        return this.homeData.colorChoiceURL;
     }
 
     /**

@@ -1,16 +1,9 @@
-﻿body {
+body {
 }
 
 
 .red {
     background-color: red;
-}
-
-.redURL {
-    //background-color: red;
-     background-image: url('/assets/images/teeshirts/checks-316861_1280.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .orange {
@@ -62,7 +55,7 @@
 }
 
 .center-design {
-    margin-left: 35%;
+    margin-left: 32%;
 }
 
 .bottom-padding {
@@ -106,57 +99,29 @@
 }
 
 .square {
-    width: 18em;
-    height: 22em;
-    background-image: url('/assets/images/teeshirts/t-shirt-9611374_1280.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin-left: 12%;
+    width: 20em;
+    height: 20em;
+    padding-top: 1em;
 }
 
-.color-square {
-    width: 7em;
+.rectangle {
+    width: 30em;
     height: 7em;
+    padding-top: 1em;
 }
-
-.sunshine {
-    width: 5em;
-    height: 3em;
-    position: relative;
-    top: 11em;
-    left: .5em;
-    background-image: url('/assets/images/teeshirts/sun-1837376_1280.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.heartPic {
-    width: 5em;
-    height: 3em;
-    position: relative;
-    top: 11em;
-    left: .5em;
-    background-image: url('/assets/images/teeshirts/heart-1288420_1280.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-// .rectangle {
-//     width: 30em;
-//     height: 7em;
-//     padding-top: 1em;
-// }
 
 .pac-man {
     width: 0px;
     height: 0px;
-    border-right: 30px solid transparent;
-    border-top: 30px solid purple;
-    border-left: 30px solid purple;
-    border-bottom: 30px solid purple;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid purple;
+    border-left: 60px solid purple;
+    border-bottom: 60px solid purple;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 }
 
 .heart {
@@ -165,15 +130,15 @@
 
 .heart:before, .heart:after {
     content: "";
-    width: 35px;
-    height: 57px;
+    width: 70px;
+    height: 115px;
     position: absolute;
     background-color: darkred;
-    left: 35px;
+    left: 70px;
     top: 0;
-    -webkit-border-radius: 25px 25px 0 0;
-    -moz-border-radius: 25px 25px 0 0;
-    border-radius: 25px 25px 0 0;
+    -webkit-border-radius: 50px 50px 0 0;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -205,13 +170,13 @@
 .star {
     width: 0;
     height: 0;
-    margin: 25px 0;
+    margin: 50px 0;
     color: #fc2e5a;
     position: relative;
     display: block;
-    border-right: 50px solid transparent;
-    border-bottom: 35px solid #fc2e5a;
-    border-left: 50px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #fc2e5a;
+    border-left: 100px solid transparent;
     -moz-transform: rotate(35deg);
     -webkit-transform: rotate(35deg);
     -ms-transform: rotate(35deg);
@@ -223,11 +188,11 @@
     width: 0;
     position: absolute;
     display: block;
-    top: -22px;
-    left: -32px;
-    border-bottom: 40px solid #fc2e5a;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
+    top: -45px;
+    left: -65px;
+    border-bottom: 80px solid #fc2e5a;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
     content: '';
     -webkit-transform: rotate(-35deg);
     -moz-transform: rotate(-35deg);
@@ -241,12 +206,12 @@
     height: 0;
     position: absolute;
     display: block;
-    top: 1.5px;
-    left: -52px;
+    top: 3px;
+    left: -105px;
     color: #fc2e5a;
-    border-right: 50px solid transparent;
-    border-bottom: 35px solid #fc2e5a;
-    border-left: 50px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #fc2e5a;
+    border-left: 100px solid transparent;
     -webkit-transform: rotate(-70deg);
     -moz-transform: rotate(-70deg);
     -ms-transform: rotate(-70deg);
@@ -257,28 +222,28 @@
 .cut-diamond {
     border-style: solid;
     border-color: transparent transparent silver transparent;
-    border-width: 0 12px 12px 12px;
+    border-width: 0 25px 25px 25px;
     height: 0;
-    width: 25px;
+    width: 50px;
     box-sizing: content-box;
     position: relative;
-    margin: 10px 0 25px 57px;
+    margin: 20px 0 50px 115px;
 }
 
 .cut-diamond:after {
     content: "";
     position: absolute;
-    top: 12.5px;
-    left: -12.5px;
+    top: 25px;
+    left: -25px;
     width: 0;
     height: 0;
     border-style: solid;
     border-color: silver transparent transparent transparent;
-    border-width: 35px 25px 0 25px;
+    border-width: 70px 50px 0 50px;
 }
 
 .space-invader {
-    box-shadow: 0 0 0 .5em brown, 0 .5em 0 .5em brown, -1.25em .75em 0 .25em brown, 1.25em .75em 0 .25em brown, -1.5em -1.5em 0 0 brown, 1.5em -1.5em 0 0 brown, -1em -1em 0 0 brown, 1em -1em 0 0 brown, -1.5em -.5em 0 0 brown, -1em -.5em 0 0 brown, 1em -.5em 0 0 brown, 1.5em -.5em 0 0 brown, -2em 0 0 0 brown, -1.5em 0 0 0 brown, 1.5em 0 0 0 brown, 2em 0 0 0 brown, -2.5em .5em 0 0 brown, -2em .5em 0 0 brown, 2em .5em 0 0 brown, 2.5em .5em 0 0 brown, -2.5em 1em 0 0 brown, 2.5em 1em 0 0 brown, -2.5em 1.5em 0 0 brown, -1.5em 1.5em 0 0 brown, 1.5em 1.5em 0 0 brown, 2.5em 1.5em 0 0 brown, -1em 2em 0 0 brown, -.5em 2em 0 0 brown, .5em 2em 0 0 brown, 1em 2em 0 0 brown;
+    box-shadow: 0 0 0 1em brown, 0 1em 0 1em brown, -2.5em 1.5em 0 .5em brown, 2.5em 1.5em 0 .5em brown, -3em -3em 0 0 brown, 3em -3em 0 0 brown, -2em -2em 0 0 brown, 2em -2em 0 0 brown, -3em -1em 0 0 brown, -2em -1em 0 0 brown, 2em -1em 0 0 brown, 3em -1em 0 0 brown, -4em 0 0 0 brown, -3em 0 0 0 brown, 3em 0 0 0 brown, 4em 0 0 0 brown, -5em 1em 0 0 brown, -4em 1em 0 0 brown, 4em 1em 0 0 brown, 5em 1em 0 0 brown, -5em 2em 0 0 brown, 5em 2em 0 0 brown, -5em 3em 0 0 brown, -3em 3em 0 0 brown, 3em 3em 0 0 brown, 5em 3em 0 0 brown, -2em 4em 0 0 brown, -1em 4em 0 0 brown, 1em 4em 0 0 brown, 2em 4em 0 0 brown;
     background-color: limegreen;
     width: 1em;
     height: 1em;
@@ -287,16 +252,16 @@
 }
 
 .lock {
-    font-size: 4px;
+    font-size: 8px;
     position: relative;
-    width: 9em;
-    height: 7.5em;
-    border-radius: 1em;
-    top: 5em;
+    width: 18em;
+    height: 13em;
+    border-radius: 2em;
+    top: 10em;
     box-sizing: border-box;
-    border: 1.75em solid purple;
-    border-right-width: 3.75em;
-    border-left-width: 3.75em;
+    border: 3.5em solid purple;
+    border-right-width: 7.5em;
+    border-left-width: 7.5em;
     margin: 0 0 6rem 0;
 }
 
@@ -304,25 +269,25 @@
     content: "Mine";
     box-sizing: border-box;
     position: absolute;
-    border: 1.25em solid purple;
-    width: 7em;
-    height: 6em;
-    left: 25%;
-    margin-left: -3.5em;
-    top: -6em;
-    border-top-left-radius: 3.5em;
-    border-top-right-radius: 3.5em;
+    border: 2.5em solid purple;
+    width: 14em;
+    height: 12em;
+    left: 50%;
+    margin-left: -7em;
+    top: -12em;
+    border-top-left-radius: 7em;
+    border-top-right-radius: 7em;
 }
 
 .lock:after {
     content: "";
     box-sizing: border-box;
     position: absolute;
-    border: .5em solid purple;
-    width: 2.5em;
-    height: 4em;
-    border-radius: 1.25em;
-    left: 25%;
-    top: -.5em;
-    margin-left: -1.25em;
+    border: 1em solid purple;
+    width: 5em;
+    height: 8em;
+    border-radius: 2.5em;
+    left: 50%;
+    top: -1em;
+    margin-left: -2.5em;
 }

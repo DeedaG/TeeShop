@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { ColorComponent } from './color/color.component';
 import { SizeComponent } from './size/size.component';
 import { DesignComponent } from './design/design.component';
+import { TshirtComponent } from './tshirt/tshirt.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DesignComponent } from './design/design.component';
     CartComponent,
     ColorComponent,
     SizeComponent,
-    DesignComponent
+    DesignComponent,
+    TshirtComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

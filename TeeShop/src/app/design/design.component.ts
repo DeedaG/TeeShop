@@ -64,4 +64,31 @@ export class DesignComponent {
         this.homeData.buyTShirt = newTee;
     }
 
+    // /**
+    //  * returns the asset url for the selected color/design
+    //  */
+    // public getTShirtUrl(): string {
+    //     const color = this.homeData.colorChoice ? this.homeData.colorChoice : 'grey';
+    //     const design = this.homeData.designChoice ? this.homeData.designChoice : 'pac-man';
+    //     return `/assets/images/teeshirts/tshirt-${color}-${design}.svg`;
+    // }
+
+    /**
+     * Map the current colorChoice to an actual hex color used to fill the inline SVG.
+     */
+    public getColorHex(): string {
+        const map: { [key: string]: string } = {
+            'red': '#e74c3c',
+            'orange': '#f39c12',
+            'yellow': '#f1c40f',
+            'green': '#2ecc71',
+            'pink': '#ff69b4',
+            'blue': '#3498db',
+            'white': '#ffffff',
+            'grey': '#95a5a6'
+        };
+        const key = this.homeData.colorChoice ? this.homeData.colorChoice : 'grey';
+        return map[key] || '#95a5a6';
+    }
+
 }

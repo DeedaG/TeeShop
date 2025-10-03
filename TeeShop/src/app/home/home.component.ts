@@ -14,7 +14,12 @@ export class HomeComponent {
     /**
      * selected design
      */
-    designChoice: string = 'pac-man';
+    designChoice: string = 'sunshine';
+
+    /**
+     * colorChoiceURL string = '';
+     */
+    colorChoiceURL: string = 'grey';
 
     /**
      * tee shirt selections

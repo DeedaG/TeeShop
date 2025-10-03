@@ -3,10 +3,10 @@
 <section class="container">
     <div class="one">
         <ol>
-            <li (click)="showTee('pac-man')"
-                class="color-border color-width center-text bottom-padding">Pac Man</li>
+            <li (click)="('sunshine')"
+                class="color-border color-width center-text bottom-padding">Sunshine</li>
 
-            <li (click)="showTee('heart')"
+            <li (click)="showTee('heartPic')"
                 class="color-border color-width center-text bottom-padding">Love</li>
 
             <li (click)="showTee('cut-diamond')"
@@ -28,11 +28,12 @@
         <div style="float: right">
             <button class="orange" (click)="addToCart()">Buy It</button>
         </div>
-        <div class="rectangle center-text" [ngClass]="getColorChoice()">
+        <!-- <div class="rectangle center-text" [ngClass]="getColorChoice()">
             <div class=" oval center-text"></div>
-        </div>
+        </div> -->
         <div class="square center-text" [ngClass]="getColorChoice()">
             <div class="center-design" [ngClass]="getDesignChoice()"></div>
         </div>
+        
     </div>
 </section>
