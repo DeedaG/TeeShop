@@ -2,11 +2,6 @@
 }
 
 
-.redURL {
-    background-image: url('/assets/images/teeshirts/checks-316861_1280.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
 .red {
     background-color: red;
@@ -47,7 +42,7 @@
 }
 
 .color-width {
-    width: 33%;
+    width: 95%;
 }
 
 .color-border {
@@ -98,8 +93,15 @@
 
 .one {
     width: 30%;
-    height: 30em;
+    height: 25em;
     float: left;
+}
+
+.one-scroll {
+    width: 50%;
+    height: 25em;
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc;
 }
 
 .two {
@@ -108,26 +110,61 @@
 }
 
 .square {
-    //margin-left: 12%;
     width: 18em;
     height: 22em;
-    //padding-top: 1em;
      background-image: url('/assets/images/teeshirts/t-shirt-9611374_1280.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.color-square {
-    border-left: url('/assets/images/teeshirts/checks-316861_1280.jpg');
-    border-top: url('/assets/images/teeshirts/checks-316861_1280.jpg');
-    border-bottom: url('/assets/images/teeshirts/checks-316861_1280.jpg');
-    border-right: url('/assets/images/teeshirts/checks-316861_1280.jpg');
+.test {
+    width: 18em;
+    height: 22em;
+    background-image: url('/assets/images/teeshirts/sun-1837376_1280.png'), url('/assets/images/teeshirts/checks-316861_1280.jpg'), url('/assets/images/teeshirts/t-shirt-9611374_1280.jpg');
+    background-position: center 11em, center 11em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 6em, cover; 
 }
 
-.rectangle {
-    width: 30em;
-    height: 7em;
-    padding-top: 1em;
+.t-shirt-base {
+    width: 18em;
+    height: 22em;
+    background-position: top 10em left 6.25em, top 10em left 6.25em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 6em, cover; 
+}
+
+.t-shirt-size {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 6.5em, top 10em right 5em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 4em, 7em, cover; 
+}
+
+.t-shirt-large {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 5.75em, top 9.75em right 4em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 9em, cover; 
+    
+}
+
+.t-shirt-no-image {
+    width: 18em;
+    height: 22em;
+    background-position: top 10em left 6.25em, left top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 6em, cover; 
+}
+
+.cropped-star {
+    width: 18em;
+    height: 22em;
+    background-position: top 12em right 5.5em, top 10em right 5em, left top;
+    background-size: 6em, 7em, cover;
+    background-repeat: no-repeat, no-repeat, repeat;
 }
 
 .sunshine {
@@ -154,47 +191,6 @@
     border-bottom-right-radius: 30px;
 }
 
-.heart {
-    position: relative;
-}
-
-.heart:before, .heart:after {
-    content: "";
-    width: 35px;
-    height: 57px;
-    position: absolute;
-    background-color: darkred;
-    left: 35px;
-    top: 0;
-    -webkit-border-radius: 25px 25px 0 0;
-    -moz-border-radius: 25px 25px 0 0;
-    border-radius: 25px 25px 0 0;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-transform-origin: 0 100%;
-    -moz-transform-origin: 0 100%;
-    -ms-transform-origin: 0 100%;
-    -o-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-}
-
-.heart:after {
-    left: 0;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-transform-origin: 100% 100%;
-    -moz-transform-origin: 100% 100%;
-    -ms-transform-origin: 100% 100%;
-    -o-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-}
-
 .heartPic {
     width: 5em;
     height: 3em;
@@ -202,6 +198,17 @@
     top: 11em;
     left: .5em;
     background-image: url('/assets/images/teeshirts/heart-1288420_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.diamond {
+    width: 3em;
+    height: 3em;
+    position: relative;
+    top: 11em;
+    left: .5em;
+    background-image: url('/assets/images/teeshirts/diamond-161739_1280.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -290,43 +297,7 @@
     margin: 50px 0 70px 145px;
 }
 
-.lock {
-    font-size: 4px;
-    position: relative;
-    width: 9em;
-    height: 7.5em;
-    border-radius: 1em;
-    top: 5em;
-    box-sizing: border-box;
-    border: 1.75em solid purple;
-    border-right-width: 3.75em;
-    border-left-width: 3.75em;
-    margin: 0 0 6rem 0;
-}
 
-.lock:before {
-    content: "Mine";
-    box-sizing: border-box;
-    position: absolute;
-    border: 1.25em solid purple;
-    width: 7em;
-    height: 6em;
-    left: 25%;
-    margin-left: -3.5em;
-    top: -6em;
-    border-top-left-radius: 3.5em;
-    border-top-right-radius: 3.5em;
-}
 
-.lock:after {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: .5em solid purple;
-    width: 2.5em;
-    height: 4em;
-    border-radius: 1.25em;
-    left: 25%;
-    top: -.5em;
-    margin-left: -1.25em;
-}
+
+

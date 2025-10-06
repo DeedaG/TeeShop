@@ -1,8 +1,8 @@
 ﻿export class TShirt {
-    id: string | undefined = undefined;
-    color: string | undefined = undefined;
-    design: string | undefined = undefined;
-    teeSize: string | undefined = undefined;
-    price: number | undefined = undefined;
-    count: number | undefined = undefined;
+    id: string | undefined;
+    color: string | undefined;
+    design: string | undefined;
+    teeSize: string | undefined;
+    price: number | undefined;
+    itemCount: number | undefined;
 }

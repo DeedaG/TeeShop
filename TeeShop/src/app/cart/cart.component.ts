@@ -9,27 +9,37 @@ import { TShirt } from '../tShirt.model';
 export class CartComponent {
     total: number = 0;
     price: number = 10.00;
-    warning: string = 'Please select size';
-    success = 'Thanks for shopping with us!';
-    message: string = 'Great taste!';
-
-    itemsInCart: TShirt[] = [];
+  
 
     constructor(
         private homeData: HomeComponent) { }
 
-    public add() {
-        let teeCount = this.homeData.buyTShirt.count;
-        this.homeData.buyTShirt.count = teeCount + 1;
+    public add(item: TShirt) {
+        let teeCount = item.itemCount;
+
+        this.homeData.addedToCart.forEach(tee => {
+            if (tee.id === item.id && teeCount) {
+                tee.itemCount = teeCount + 1;
+            }
+        });
+
         this.getTotal();
+        this.homeData.updateItemCount();
     }
 
-    public remove() {
-        let teeCount = this.homeData.buyTShirt.count;
-        if (teeCount > 2) {
-            this.homeData.buyTShirt.count = teeCount - 1;
-        }
+    public removeItem(item: TShirt) {
+        this.homeData.addedToCart.forEach(tee => {
+            if (tee.id === item.id && tee.itemCount > 0) {
+                let index = this.homeData.addedToCart.findIndex(item => item.id === tee.id);
+                if (index > -1 && tee.itemCount === 1) {
+                    this.homeData.addedToCart.splice(index, 1);
+                }else{
+                    tee.itemCount = tee.itemCount - 1;
+                }
+            }
+        });
         this.getTotal();
+        this.homeData.updateItemCount();
     }
 
     public anyItemsInCart(): boolean {
@@ -37,24 +47,22 @@ export class CartComponent {
         tee.price = this.price;
         tee.teeSize = this.homeData.teeSize;
         if (tee && tee.color && tee.design) {
-            this.checkForSize(tee);
+            this.homeData.checkForSize(tee);
             this.getTotal();
         }
-        return this.itemsInCart.length > 0;
+        return this.homeData.addedToCart.length > 0;
     }
 
-    checkForSize(tee: TShirt): void {
-        if (!tee.teeSize) {
-            this.message = this.warning;
-        }
-        if (tee.teeSize) {
-            this.itemsInCart.push(tee);
-            this.message = this.success;
-        }
-    }
-
+    
     getTotal(): void {
-        this.total = this.homeData.buyTShirt.count * this.price;
+        let amount = 0;
+        this.homeData.addedToCart.forEach(item => {
+            if (item.itemCount && this.price) {
+                let thisTotal = item.itemCount * this.price;
+                amount += thisTotal;
+            }
+        });
+        this.total = amount;
     }
 
 }

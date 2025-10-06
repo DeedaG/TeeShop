@@ -20,7 +20,11 @@
                    [ngClass]="{ show: isExpanded }">
                   <ul class="navbar-nav flex-grow">
                       <li class="nav-item" [routerLinkActive]="['link-active']">
-                          <a class="nav-link text-dark" [routerLink]="['/cart']">Cart</a>
+                          <a class="nav-link text-dark" [routerLink]="['/cart']">
+                            <i class="fa-solid fa-cart-shopping">
+                            </i>
+                            <span style="padding-left: .5em;" class="navbar-text">{{homeData.itemCount}}</span>
+                          </a>
                       </li>
                   </ul>
               </div>

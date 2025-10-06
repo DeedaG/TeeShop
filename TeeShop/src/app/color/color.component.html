@@ -3,7 +3,12 @@
 
 <section class="container">
     <div class="one">
+        <div class="one-scroll">
         <ol>
+            <li (click)="homeData.clearTshirt()"
+                class="color-border color-width center-text bottom-padding">Clear All Choices</li>
+            <li (click)="clearColor()"
+                class="color-border color-width center-text bottom-padding">Clear Color</li>
             <li (click)="showTee('red')"
                 class="red color-border color-width center-text bottom-padding">Red</li>
 
@@ -22,24 +27,37 @@
             <li (click)="showTee('pink')"
                 class="pink color-border color-width center-text bottom-padding">Pink</li>
         </ol>
+        </div>
     </div>
     <div class="two">
         <div style="float: right">
-            <!--<a (click)="addToCart()" href="javascript:void(0)">
-                <i class="fa fa-plus" ></i>
-            </a>-->
-            <button class="orange" (click)="addToCart()">Buy It</button>
+            <button class="orange" (click)="homeData.addToCart()">Buy It</button>
         </div>
         <br />
         <br />
-        <!-- <div class="rectangle center-text" [ngClass]="getColorChoice()">
-            <div class=" oval center-text"></div>
-        </div> -->
-        <div class="square center-text">
-            <!-- <div class="square center-text" [ngClass]="getColorChoice()"> -->
-            <div class="center-design" [ngClass]="getDesignChoice()"></div>
+        <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+            <div 
+                *ngIf="homeData.base" 
+                class = "t-shirt-base" 
+                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            </div>
+            <div 
+                *ngIf="!homeData.base" 
+                class = "t-shirt-size" 
+                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            </div>
         </div>
-        
+       <div *ngIf="homeData.designChoice == 'space-invader'"
+            class="t-shirt-large" 
+            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+
+        </div>
+        <div 
+            *ngIf="homeData.designChoice == 'star'" 
+            class="cropped-star" 
+            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+        </div>
+      
     </div>
 </section>
 

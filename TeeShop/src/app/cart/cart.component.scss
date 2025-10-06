@@ -8,8 +8,8 @@
 .cells {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
-    width: 20%;
+    // padding: 8px;
+    // width: 20%;
 }
 
 tr:nth-child(even) {
@@ -22,4 +22,37 @@ tr:nth-child(even) {
 
 .text-blue {
     text-decoration-color: blue;
+}
+
+.t-shirt-base {
+    width: 18em;
+    height: 22em;
+    background-position: top 10em left 6.25em, top 10em left 6.25em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 6em, cover; 
+}
+
+.t-shirt-size {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 6.5em, top 10em right 5em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 4em, 7em, cover; 
+}
+
+.t-shirt-large {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 5.75em, top 9.75em right 4em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 9em, cover; 
+    
+}
+
+.cropped-star {
+    width: 18em;
+    height: 22em;
+    background-position: top 12em right 5.5em, top 10em right 5em, left top;
+    background-size: 6em, 7em, cover;
+    background-repeat: no-repeat, no-repeat, repeat;
 }

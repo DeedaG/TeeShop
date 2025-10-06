@@ -1,6 +1,6 @@
 <h1>Shopping Cart</h1>
 
-<h2 style="color:red">{{message}}</h2>
+<h2 style="color:red">{{homeData.message}}</h2>
 
 <p aria-live="polite">
     Current items:
@@ -14,19 +14,47 @@
             <th class="cells">Count</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let item of homeData.addedToCart">
         <tr>
-            <td class="cells">{{homeData.colorChoice}}</td>
-            <td class="cells">{{homeData.designChoice}}</td>
-            <td class="cells">{{homeData.buyTShirt.teeSize}}</td>
+            <td class="cells">{{item.color}}</td>
+            <td class="cells">{{item.design}}</td>
+            <td class="cells">{{item.teeSize}}</td>
             <td class="cells">
-                {{ homeData.buyTShirt.count }}
-                
+                {{ item.itemCount }}
             </td>
-            <td><button class="btn btn-primary" (click)="add()"> Add</button></td>
-            <td><button class="btn btn-primary" (click)="remove()"> Remove</button></td>
+            <td>
+                <i (click)="add(item)" class="fa fa-plus"></i>
+            </td>
+            <td> 
+                <i (click)="removeItem(item)" class="fa fa-trash"></i>
+            </td>
+            <td>
+                <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+                    <div 
+                        *ngIf="homeData.base" 
+                        class = "t-shirt-base" 
+                        [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                    </div>
+                    <div 
+                        *ngIf="!homeData.base" 
+                        class = "t-shirt-size" 
+                        [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                    </div>
+                </div>
+                <div *ngIf="homeData.designChoice == 'space-invader'"
+                    class="t-shirt-large" 
+                    [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+
+                </div>
+                <div 
+                    *ngIf="homeData.designChoice == 'star'" 
+                    class="cropped-star" 
+                    [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -34,6 +62,9 @@
         <div class="center-design text-blue">
             <h2>Total: <strong>${{ total}}</strong>
             </h2>
+            <br>
+            <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+            
         </div>
         
 

@@ -9,8 +9,36 @@
         </ul>
     </div>
     <div class="two">
+         
+        <div style="float: right">
+            <button class="orange" (click)="homeData.addToCart()">Buy It</button>
+        </div>
         <br />
         <br />
-        <h1 style="color:red">{{selectedSize}}</h1>
+        <h1 style="color:red">Size: {{selectedSize}}</h1>
+        <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+            <div 
+                *ngIf="homeData.base" 
+                class = "t-shirt-base" 
+                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            </div>
+            <div 
+                *ngIf="!homeData.base" 
+                class = "t-shirt-size" 
+                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            </div>
+        </div>
+       <div *ngIf="homeData.designChoice == 'space-invader'"
+            class="t-shirt-large" 
+            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+
+        </div>
+        <div 
+            *ngIf="homeData.designChoice == 'star'" 
+            class="cropped-star" 
+            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+        </div>
     </div>
 </section>
+
+

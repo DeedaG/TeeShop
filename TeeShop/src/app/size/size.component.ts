@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { HomeComponent } from '../home/home.component';
+import { TShirt } from '../tShirt.model';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-size',
