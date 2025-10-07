@@ -1,14 +1,18 @@
-<h1>Tee Shop</h1>
-<p>Unique T Shirts</p>
+<div style="padding: 10px;"
+[ngStyle]="{'background-image': 'url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+   
+    <h1 style="color: white;">Tee Shop</h1>
+    <p style="color: white;">Unique T Shirts</p>
 
-<p>Click below for colors designs and sizes:</p>
-<ul>
-    <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark" [routerLink]="['/color']">Color</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark" [routerLink]="['/design' ]">Design</a>
-            </li>
-    <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark" [routerLink]="['/size']">Size</a>
-</ul>
+    <p style="color: white;">Click below for colors, designs, and sizes:</p>
+    <ul style="color: white;">
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a  style="color: greenyellow;" [routerLink]="['/color']">Color</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a  style="color: greenyellow;" [routerLink]="['/design' ]">Design</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a style="color: greenyellow;" [routerLink]="['/size']">Size</a>
+    </ul>
+</div>

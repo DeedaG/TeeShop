@@ -47,7 +47,7 @@ export class HomeComponent {
     warning: string = 'Please select size';
     success = 'Great choices!';
     paid = 'Thanks for shopping with us!';
-    message: string;
+    message: string = '';
 
 
     public clearTshirt(): void {
@@ -71,6 +71,9 @@ export class HomeComponent {
         newTee.color = this.colorChoice;
         newTee.itemCount = 1;
         newTee.teeSize = this.teeSize;
+        newTee.designURL = this.designChoiceURL;
+        newTee.colorURL = this.colorChoiceURL;
+        newTee.base = this.base;
         
         this.checkForSize(newTee);
 
@@ -78,6 +81,7 @@ export class HomeComponent {
         this.addedToCart.push(newTee);
 
         this.updateItemCount();
+        console.log('addedToCart', this.addedToCart);
     }
 
     public updateItemCount(): void {

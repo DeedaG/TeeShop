@@ -5,4 +5,7 @@
     teeSize: string | undefined;
     price: number | undefined;
     itemCount: number | undefined;
+    designURL: string | undefined;
+    colorURL: string | undefined;
+    base: boolean | undefined;
 }

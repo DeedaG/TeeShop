@@ -9,7 +9,7 @@ import { TShirt } from '../tShirt.model';
 export class CartComponent {
     total: number = 0;
     price: number = 10.00;
-  
+    selectedItem: TShirt | null = null;
 
     constructor(
         private homeData: HomeComponent) { }
@@ -63,6 +63,18 @@ export class CartComponent {
             }
         });
         this.total = amount;
+    }
+
+    selectItem(item: TShirt): void {
+        this.selectedItem = item;
+        this.homeData.buyTShirt = item;
+       
+        this.homeData.teeSize = item.teeSize;
+        this.homeData.colorChoice = item.color;
+        this.homeData.colorChoiceURL = item.colorURL;
+        this.homeData.designChoice = item.design;
+        this.homeData.designChoiceURL = item.designURL;
+        this.homeData.base = item.base;
     }
 
 }
