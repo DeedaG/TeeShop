@@ -2,8 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { TShirt } from '../tShirt.model';
-import { v4 as uuidv4 } from 'uuid';
+
 
 @Component({
   selector: 'app-color',
@@ -28,11 +27,39 @@ export class ColorComponent {
      * @param colorChoice
      */
     public showTee(colorChoice: string): void {
-        if (colorChoice) {
-            this.homeData.colorChoice = colorChoice;
+            switch (colorChoice) {
+                case 'red':
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/checks-316861_1280.jpg';
+                    this.homeData.colorChoice = 'red';
+                    break;
+                case 'orange':
+                    this.homeData.colorChoice = 'orange';
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/checks-316855_1280.jpg';
+                    break;
+                case 'yellow':
+                    this.homeData.colorChoice = 'yellow';
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/pattern-7039741_1280.png';
+                    break;
+                case 'green':
+                    this.homeData.colorChoice = 'green';
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/green-2847123_1280.jpg';
+                    break;
+                case 'blue':
+                    this.homeData.colorChoice = 'blue';
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/jeans-1161035_1280.jpg';
+                    break;
+                case 'pink':
+                    this.homeData.colorChoice = 'pink';
+                    this.homeData.colorChoiceURL = '/assets/images/teeshirts/checks-316856_1280.jpg';
+                    break;
+                default:
+                     this.homeData.colorChoice = 'grey';
+                     this.homeData.colorChoiceURL = null;
+                     break;
+            }
             return;
         }
-    }
+    
 
     /**
      * returns color choice css
@@ -41,33 +68,18 @@ export class ColorComponent {
         return this.homeData.colorChoice;
     }
 
-    /**
-     * returns design choice css string
+     /**
+     * returns color choice url css
      */
-    public getDesignChoice(): string {
-        let cssString = this.homeData.designChoice;
-
-        if (this.homeData.colorChoice) {
-            let changeCss = cssString.concat(' ').concat(this.homeData.colorChoice);
-            cssString = changeCss;
-            console.log(cssString);
-        }
-
-        return cssString;
+    public getColorChoiceURL(): string {
+        return this.homeData.colorChoiceURL;
     }
 
-    /**
-     *set selections to buyTShirt object
-     */
-    public addToCart(): void {
-        this.homeData.count += 1;
-        let newTee = new TShirt();
-
-        newTee.id = uuidv4();
-        newTee.design = this.homeData.designChoice;
-        newTee.color = this.homeData.colorChoice;
-        newTee.count = this.homeData.count;
-
-        this.homeData.buyTShirt = newTee;
+    public clearColor(): void {
+        this.homeData.colorChoice = null;
+        this.homeData.colorChoiceURL = null;
+        this.homeData.base = true;
     }
+
+  
 }

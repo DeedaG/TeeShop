@@ -1,6 +1,6 @@
 <h1>Shopping Cart</h1>
 
-<h2 style="color:red">{{message}}</h2>
+<h2 style="color:red">{{homeData.message}}</h2>
 
 <p aria-live="polite">
     Current items:
@@ -11,22 +11,64 @@
             <th class="cells">Color</th>
             <th class="cells">Design</th>
             <th class="cells">Size</th>
+            <th class="cell-pic">Selection</th>
             <th class="cells">Count</th>
-            <th></th>
-            <th></th>
+            <th class="cells"> </th>
+            <th class="cells"> </th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td class="cells">{{homeData.colorChoice}}</td>
-            <td class="cells">{{homeData.designChoice}}</td>
-            <td class="cells">{{homeData.buyTShirt.teeSize}}</td>
-            <td class="cells">
-                {{ homeData.buyTShirt.count }}
-                
+    <tbody *ngFor="let item of homeData.addedToCart">
+        <tr >
+
+            <td (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem"
+                class="cells">{{item.color}}
             </td>
-            <td><button class="btn btn-primary" (click)="add()"> Add</button></td>
-            <td><button class="btn btn-primary" (click)="remove()"> Remove</button></td>
+            <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
+                {{item.design}}
+            </td>
+            <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
+                {{item.teeSize}}
+            </td>
+
+            <td *ngIf="item.base && item.design != 'star' && item.design != 'space-invader'" 
+                class="cell-pic"
+                [ngStyle]="{'background-image': 'url(' + item.designURL + '), url(' + item.colorURL + ')',
+                'background-repeat': 'no-repeat, no-repeat',
+                'background-size': '50px, 50px'}">
+            </td>
+
+            <td *ngIf="!item.base && item.design != 'star' && item.design != 'space-invader'" 
+                class="cell-pic"
+                [ngStyle]="{'background-image': 'url(' + item.designURL + '), url(' + item.colorURL + ')',
+                'background-repeat': 'no-repeat, no-repeat',
+                'background-size': '30px, 50px',
+                'background-position': 'top 6px left 10px, top left'}">
+            </td>
+            <td *ngIf="item.design == 'space-invader'"
+                class="cell-pic"
+                 [ngStyle]="{'background-image': 'url(' + item.designURL + '), url(' + item.colorURL + ')',
+                'background-repeat': 'no-repeat, no-repeat',
+                'background-size': '30px, 50px',
+                'background-position': 'top 6px left 10px, top left'}">
+            </td>
+            <td *ngIf="item.design == 'star'" 
+                class="cell-pic"
+                [ngStyle]="{'background-image': 'url(' + item.designURL + '), url(' + item.colorURL + ')',
+                 'background-repeat': 'no-repeat, no-repeat',
+                  'background-size': '30px, 50px',
+                'background-position': 'top 6px left 10px, top left'}">
+            </td>
+
+            <td class="cells">
+                {{ item.itemCount }}
+            </td>
+            <td class="add-remove-cells">
+                <i (click)="add(item)" class="fa fa-plus"></i>
+            </td>
+            <td class="add-remove-cells"> 
+                <i (click)="removeItem(item)" class="fa fa-trash"></i>
+            </td>
+            
         </tr>
     </tbody>
 </table>
@@ -34,6 +76,9 @@
         <div class="center-design text-blue">
             <h2>Total: <strong>${{ total}}</strong>
             </h2>
+            <br>
+            <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+            
         </div>
         
 

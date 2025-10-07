@@ -8,8 +8,22 @@
 .cells {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
-    width: 20%;
+    // padding: 8px;
+     width: 10%;
+}
+
+.cell-pic {
+    border: 1px solid #dddddd;
+    text-align: left;
+    // padding: 8
+    width: 5%;
+}
+
+.add-remove-cells{
+    border: 1px solid #dddddd;
+    text-align: center;
+    // padding: 8px;
+    width: 5%;
 }
 
 tr:nth-child(even) {
@@ -23,3 +37,23 @@ tr:nth-child(even) {
 .text-blue {
     text-decoration-color: blue;
 }
+
+.selected {
+    background-color: lightblue;
+}
+
+.image {
+    // width: 100px;
+    // height: auto;
+    // margin: 5px;
+    
+    background-repeat: no-repeat, no-repeat;
+    background-size: '10px, 15px';
+}
+
+
+
+
+
+
+

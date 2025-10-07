@@ -25,23 +25,40 @@ export class DesignComponent {
     public showTee(designChoice: string): void {
         if (designChoice) {
             this.homeData.designChoice = designChoice;
+            
+            switch (designChoice) {
+                case 'sunshine':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/sun-1837376_1280.png';
+                    console.log('showTee(sunshine)', this.homeData.designChoiceURL);
+                    this.homeData.base = true;
+                    break;
+                case 'heartPic':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/heart-1288420_1280.jpg';
+                    this.homeData.base = false;
+                    break;
+                case 'diamond':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/diamond-161739_1280.png';
+                    this.homeData.base = false;
+                    break;
+                 case 'star':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/star-1870164_1280.jpg';
+                    this.homeData.base = true;
+                    break;   
+                 case 'lock':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/padlock-428549_1280.jpg';
+                    this.homeData.base = false;
+                    break; 
+                case 'space-invader':
+                    this.homeData.designChoiceURL = '/assets/images/teeshirts/invader-42007_1280.png';
+                    this.homeData.base = false;
+                    break;  
+            }
             return;
         }
     }
 
-    /**
-     * returns design choice css string
-     */
-    public getDesignChoice(): string {
-        let cssString = this.homeData.designChoice;
 
-        if (this.homeData.colorChoice) {
-            let changeCss = cssString.concat(' ').concat(this.homeData.colorChoice);
-            cssString = changeCss;
-            console.log(cssString);
-        }
-        return cssString;
-    }
+ 
 
     /**
      * returns color choice css
@@ -50,18 +67,11 @@ export class DesignComponent {
         return this.homeData.colorChoice;
     }
 
-    /**
-     *set selections to buyTShirt object
-     */
-    public addToCart(): void {
-        this.homeData.count += 1;
-        let newTee = new TShirt();
 
-        newTee.id = uuidv4();
-        newTee.design = this.homeData.designChoice;
-        newTee.color = this.homeData.colorChoice;
-        newTee.count = this.homeData.count;
-        this.homeData.buyTShirt = newTee;
+    public clearDesign(): void {
+        this.homeData.designChoice = null;
+        this.homeData.designChoiceURL = null;
+        this.homeData.base = true;
     }
 
 }

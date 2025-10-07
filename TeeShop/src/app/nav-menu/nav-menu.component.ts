@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+
+  constructor(private homeData: HomeComponent) { }
+  
 
   collapse() {
     this.isExpanded = false;

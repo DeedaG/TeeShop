@@ -6,13 +6,287 @@
     padding: 10px;
 }
 
+
+
+body {
+}
+
+
+.red {
+    background-color: red;
+}
+
+
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.white {
+    background-color: white;
+}
+
+.white-with-borders {
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.color-width {
+    width: 95%;
+}
+
+.color-border {
+    border-color: black;
+    border-width: thick;
+    border-style: double;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-design {
+    margin-left: 35%;
+}
+
+.bottom-padding {
+    padding-bottom: 2em;
+}
+
+.circle {
+    height: 2em;
+    width: 6em;
+    border-radius: 5%;
+    border-style: solid;
+    background: white;
+}
+
+.oval {
+    width: 10em;
+    height: 4em;
+    background-color: lightgray;
+    border-radius: 10em / 3em;
+    margin-left: 34.5%;
+    margin-top: -3%;
+}
+
 .one {
     width: 30%;
     height: 30em;
     float: left;
 }
 
+.one-scroll {
+    width: 50%;
+    height: 25em;
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc;
+}
+
 .two {
     margin-left: 35%;
     height: 30em;
 }
+
+.square {
+    width: 18em;
+    height: 22em;
+    background-image: url('/assets/images/teeshirts/t-shirt-9611374_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.t-shirt-base {
+    width: 18em;
+    height: 22em;
+    background-position: top 10em left 6.25em, top 10em left 6.25em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 6em, cover; 
+}
+
+.t-shirt-size {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 6.5em, top 10em right 5em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 4em, 7em, cover; 
+}
+
+.t-shirt-large {
+    width: 18em;
+    height: 22em;
+    background-position: top 11em right 5.75em, top 9.75em right 4em, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 6em, 9em, cover; 
+    
+}
+
+.cropped-star {
+    width: 18em;
+    height: 22em;
+    background-position: top 12em right 5.5em, top 10em right 5em, left top;
+    background-size: 6em, 7em, cover;
+    background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.t-shirt-no-image {
+    width: 18em;
+    height: 22em;
+    background-position: top 10em left 6.25em, left top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 6em, cover; 
+}
+
+.sunshine {
+    width: 5em;
+    height: 3em;
+    position: relative;
+    top: 11em;
+    left: .5em;
+    background-image: url('/assets/images/teeshirts/sun-1837376_1280.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.heartPic {
+    width: 5em;
+    height: 3em;
+    position: relative;
+    top: 11em;
+    left: .5em;
+    background-image: url('/assets/images/teeshirts/heart-1288420_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.diamond {
+    background-image: url('/assets/images/teeshirts/diamond-161739_1280.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+ß
+
+.pac-man {
+    width: 0px;
+    height: 0px;
+    border-right: 30px solid transparent;
+    border-top: 30px solid purple;
+    border-left: 30px solid purple;
+    border-bottom: 30px solid purple;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+
+
+
+
+.star {
+    width: 0;
+    height: 0;
+    margin: 25px 0;
+    color: #fc2e5a;
+    position: relative;
+    display: block;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid #fc2e5a;
+    border-left: 50px solid transparent;
+    -moz-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+}
+
+.star:before {
+    height: 0;
+    width: 0;
+    position: absolute;
+    display: block;
+    top: -22px;
+    left: -32px;
+    border-bottom: 40px solid #fc2e5a;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    content: '';
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+}
+
+.star:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    display: block;
+    top: 1.5px;
+    left: -52px;
+    color: #fc2e5a;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid #fc2e5a;
+    border-left: 50px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+}
+
+
+.cut-diamond {
+    border-style: solid;
+    border-color: transparent transparent silver transparent;
+    border-width: 0 12px 12px 12px;
+    height: 0;
+    width: 25px;
+    box-sizing: content-box;
+    position: relative;
+    margin: 10px 0 25px 57px;
+}
+
+.cut-diamond:after {
+    content: "";
+    position: absolute;
+    top: 12.5px;
+    left: -12.5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: silver transparent transparent transparent;
+    border-width: 35px 25px 0 25px;
+}
+
+.space-invader {
+    box-shadow: 0 0 0 .5em brown, 0 .5em 0 .5em brown, -1.25em .75em 0 .25em brown, 1.25em .75em 0 .25em brown, -1.5em -1.5em 0 0 brown, 1.5em -1.5em 0 0 brown, -1em -1em 0 0 brown, 1em -1em 0 0 brown, -1.5em -.5em 0 0 brown, -1em -.5em 0 0 brown, 1em -.5em 0 0 brown, 1.5em -.5em 0 0 brown, -2em 0 0 0 brown, -1.5em 0 0 0 brown, 1.5em 0 0 0 brown, 2em 0 0 0 brown, -2.5em .5em 0 0 brown, -2em .5em 0 0 brown, 2em .5em 0 0 brown, 2.5em .5em 0 0 brown, -2.5em 1em 0 0 brown, 2.5em 1em 0 0 brown, -2.5em 1.5em 0 0 brown, -1.5em 1.5em 0 0 brown, 1.5em 1.5em 0 0 brown, 2.5em 1.5em 0 0 brown, -1em 2em 0 0 brown, -.5em 2em 0 0 brown, .5em 2em 0 0 brown, 1em 2em 0 0 brown;
+    background-color: limegreen;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    margin: 50px 0 70px 145px;
+}
+
+
