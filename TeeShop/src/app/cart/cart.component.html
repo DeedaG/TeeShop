@@ -1,3 +1,7 @@
+<!-- <div [ngStyle]="{'background-image': 'url(/assets/images/teeshirts/clothes-1839935_1280.jpg)',
+ 'background-repeat': 'no-repeat',
+'background-size': '800px'}"> -->
+
 <h1>Shopping Cart</h1>
 
 <h2 style="color:red">{{homeData.message}}</h2>
@@ -24,7 +28,7 @@
                 class="cells">{{item.color}}
             </td>
             <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
-                {{item.design}}
+                {{getDisplayDesign(item)}}
             </td>
             <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
                 {{item.teeSize}}
@@ -81,4 +85,4 @@
             
         </div>
         
-
+<!-- </div> -->

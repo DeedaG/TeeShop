@@ -77,4 +77,21 @@ export class CartComponent {
         this.homeData.base = item.base;
     }
 
+    getDisplayDesign(item: TShirt){
+        switch(item.design){
+            case 'heartPic':
+                return 'Love';
+            case 'sunshine':
+                return 'Sunshine';
+            case 'diamond':
+                return 'Sparkly';
+            case 'lock':
+                return 'Keeper';
+            case 'star':
+                return 'Bright';
+            case 'space-invader':
+                return 'Space Invader';
+        }
+    }
+
 }
