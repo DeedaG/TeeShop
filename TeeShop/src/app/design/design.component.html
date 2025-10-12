@@ -28,33 +28,37 @@
         </div>
     </div>
     <div class="two">
-        <br />
-        <br />
-        <div style="float: right">
+        <div *ngIf="!homeData.buyTShirt.editing" style="float: right;">
             <button class="orange" (click)="homeData.addToCart()">Buy It</button>
         </div>
-        <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+        <div *ngIf="homeData.buyTShirt.editing" style="float: right;">
+            <button class="orange" (click)="homeData.validate()">Update Cart</button>
+        </div>
+        <br />
+        <br />
+        
+        <div *ngIf="homeData.buyTShirt.design != 'star' && homeData.buyTShirt.design != 'space-invader'">
             <div 
-                *ngIf="homeData.base" 
+                *ngIf="homeData.buyTShirt.base" 
                 class = "t-shirt-base"
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
             <div 
-                *ngIf="!homeData.base" 
+                *ngIf="!homeData.buyTShirt.base" 
                 class="t-shirt-size" 
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
         </div>
-        <div *ngIf="homeData.designChoice == 'space-invader'"
+        <!-- <div *ngIf="homeData.buyTShirt.design == 'space-invader'"
             class="t-shirt-large" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
            
         </div>
         <div
-            *ngIf="homeData.designChoice == 'star'" 
+            *ngIf="hhomeData.buyTShirt.design == 'star'" 
             class="cropped-star" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
-        </div>
+            [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+        </div> -->
        
     </div>
 </section>

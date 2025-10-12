@@ -45,9 +45,9 @@ export class CartComponent {
     public anyItemsInCart(): boolean {
         let tee = this.homeData.buyTShirt;
         tee.price = this.price;
-        tee.teeSize = this.homeData.teeSize;
+        tee.teeSize = this.homeData.buyTShirt.teeSize;
         if (tee && tee.color && tee.design) {
-            this.homeData.checkForSize(tee);
+            this.homeData.updateMessage();
             this.getTotal();
         }
         return this.homeData.addedToCart.length > 0;
@@ -68,13 +68,7 @@ export class CartComponent {
     selectItem(item: TShirt): void {
         this.selectedItem = item;
         this.homeData.buyTShirt = item;
-       
-        this.homeData.teeSize = item.teeSize;
-        this.homeData.colorChoice = item.color;
-        this.homeData.colorChoiceURL = item.colorURL;
-        this.homeData.designChoice = item.design;
-        this.homeData.designChoiceURL = item.designURL;
-        this.homeData.base = item.base;
+        this.homeData.validate();
     }
 
     getDisplayDesign(item: TShirt){

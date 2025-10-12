@@ -7,21 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-   
-    /**
-     * selected color
-     */
-    colorChoice: string = 'grey';
-
-    /**
-     * selected design
-     */
-    designChoice: string = 'sunshine';
-
-    /**
-     * colorChoiceURL string = '';
-     */
-    colorChoiceURL: string;
 
     /**
      * tee shirt selections
@@ -29,18 +14,9 @@ export class HomeComponent {
     buyTShirt: TShirt = <TShirt>{};
 
     /**
-     * tee shirt size
-     */
-    teeSize: string = '';
-
-    /**
      * tee shirt count
      */
     itemCount: number = 0;
-    
-    designChoiceURL: string;
-
-    base: boolean = true;
 
     addedToCart: TShirt[] = [];
 
@@ -51,37 +27,22 @@ export class HomeComponent {
 
 
     public clearTshirt(): void {
-        this.buyTShirt = <TShirt>{};
-        this.teeSize = '';
-        this.colorChoice = '';
-        this.colorChoiceURL = '';
-        this.designChoice = '';
-        this.designChoiceURL = '';
-        this.base = true;
+        this.buyTShirt = new TShirt();
+    }
+
+    public createTShirt(): void {
+        this.buyTShirt = new TShirt();
+        this.buyTShirt.id = uuidv4();
+        this.buyTShirt.itemCount = 1;
     }
 
       /**
      *set selections to buyTShirt object
      */
     public addToCart(): void {
-        let newTee = new TShirt();
-
-        newTee.id = uuidv4();
-        newTee.design = this.designChoice;
-        newTee.color = this.colorChoice;
-        newTee.itemCount = 1;
-        newTee.teeSize = this.teeSize;
-        newTee.designURL = this.designChoiceURL;
-        newTee.colorURL = this.colorChoiceURL;
-        newTee.base = this.base;
-        
-        this.checkForSize(newTee);
-
-        this.buyTShirt = newTee;
-        this.addedToCart.push(newTee);
-
+        this.updateMessage();
+        this.addedToCart.push(this.buyTShirt);
         this.updateItemCount();
-        console.log('addedToCart', this.addedToCart);
     }
 
     public updateItemCount(): void {
@@ -92,24 +53,36 @@ export class HomeComponent {
             }
         });
 
+        console.log('addedtocart',this.addedToCart);
         this.itemCount = itemCount;
+        console.log('itemcount',this.itemCount);
     }
 
-    checkForSize(tee: TShirt): void {
-        if (!tee.teeSize) {
+    validate(){
+         this.addedToCart.forEach(tShirt => {
+            if(tShirt.id == this.buyTShirt.id){
+                tShirt.editing = true;
+                this.buyTShirt.editing = true;
+                this.updateMessage();
+            }
+        });
+    }
+
+    updateMessage(): void {
+        if (!this.buyTShirt.teeSize) {
             this.message = this.warning;
             return;
         }
-        if(!tee.color) {
+        if(!this.buyTShirt.color) {
             this.message = 'Please select a color';
             return;
         }
-        if(!tee.design) {
+        if(!this.buyTShirt.design) {
             this.message = 'Please select a design';
             return;
         }
 
-        if (tee.teeSize && tee.color && tee.design) {
+        if (this.buyTShirt.teeSize && this.buyTShirt.color && this.buyTShirt.design) {
             this.message = this.success;
         }
     }
