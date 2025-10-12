@@ -97,7 +97,7 @@
 
 .one-scroll {
     width: 50%;
-    height: 25em;
+    height: 20em;
     overflow-y: auto; /* Enables vertical scrolling */
     border: 1px solid #ccc;
 }
@@ -287,3 +287,6 @@
     margin: 50px 0 70px 145px;
 }
 
+.cell-pic {
+    width: 5%;
+}
