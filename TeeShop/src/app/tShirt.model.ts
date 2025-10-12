@@ -7,5 +7,6 @@
     itemCount: number | undefined;
     designURL: string | undefined;
     colorURL: string | undefined;
-    base: boolean | undefined;
+    base: boolean | undefined = true;
+    editing: boolean | undefined = false;
 }

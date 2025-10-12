@@ -1,9 +1,6 @@
 import { Component, Inject, OnInit  } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { TShirt } from '../tShirt.model';
-import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-design',
@@ -23,36 +20,40 @@ export class DesignComponent {
      * @param designChoice
      */
     public showTee(designChoice: string): void {
+        if(this.homeData.buyTShirt && !this.homeData.buyTShirt.id){
+            this.homeData.createTShirt();
+        } 
+
         if (designChoice) {
-            this.homeData.designChoice = designChoice;
+            this.homeData.buyTShirt.design = designChoice;
             
             switch (designChoice) {
                 case 'sunshine':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/sun-1837376_1280.png';
-                    console.log('showTee(sunshine)', this.homeData.designChoiceURL);
-                    this.homeData.base = true;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/sun-1837376_1280.png';
+                    this.homeData.buyTShirt.base = true;
                     break;
                 case 'heartPic':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/heart-1288420_1280.jpg';
-                    this.homeData.base = false;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/heart-1288420_1280.jpg';
+                    this.homeData.buyTShirt.base = false;
                     break;
                 case 'diamond':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/diamond-161739_1280.png';
-                    this.homeData.base = false;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/diamond-161739_1280.png';
+                    this.homeData.buyTShirt.base = false;
                     break;
                  case 'star':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/star-1870164_1280.jpg';
-                    this.homeData.base = true;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/star-1870164_1280.jpg';
+                    this.homeData.buyTShirt.base = true;
                     break;   
                  case 'lock':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/padlock-428549_1280.jpg';
-                    this.homeData.base = false;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/padlock-428549_1280.jpg';
+                    this.homeData.buyTShirt.base = false;
                     break; 
                 case 'space-invader':
-                    this.homeData.designChoiceURL = '/assets/images/teeshirts/invader-42007_1280.png';
-                    this.homeData.base = false;
+                    this.homeData.buyTShirt.designURL = '/assets/images/teeshirts/invader-42007_1280.png';
+                    this.homeData.buyTShirt.base = false;
                     break;  
             }
+            this.homeData.validate();
             return;
         }
     }
@@ -64,14 +65,14 @@ export class DesignComponent {
      * returns color choice css
      */
     public getColorChoice(): string {
-        return this.homeData.colorChoice;
+        return this.homeData.buyTShirt.color;
     }
 
 
     public clearDesign(): void {
-        this.homeData.designChoice = null;
-        this.homeData.designChoiceURL = null;
-        this.homeData.base = true;
+        this.homeData.buyTShirt.design = null;
+        this.homeData.buyTShirt.designURL = null;
+        this.homeData.buyTShirt.base = true;
     }
 
 }

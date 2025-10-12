@@ -14,8 +14,11 @@ export class SizeComponent {
     constructor(private homeData: HomeComponent) { }
 
     public setSize(size: string): void {
+      if(this.homeData.buyTShirt && !this.homeData.buyTShirt.id){
+            this.homeData.createTShirt();
+        }
         this.selectedSize = size;
-        this.homeData.teeSize = size;
+        this.homeData.buyTShirt.teeSize = size;
     }
 
 }

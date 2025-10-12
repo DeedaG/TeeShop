@@ -7,54 +7,69 @@
             <li (click)="clearDesign()"
                 class="color-border color-width center-text bottom-padding">Clear Design</li>
             <li (click)="showTee('sunshine')"
-                class="color-border color-width center-text bottom-padding">Sunshine</li>
-
-            <li (click)="showTee('heartPic')"
-                class="color-border color-width center-text bottom-padding">Love</li>
-
-            <li (click)="showTee('diamond')"
-                class="color-border color-width center-text bottom-padding">Sparkly</li>
-
-            <li (click)="showTee('lock')"
-                class="color-border color-width center-text bottom-padding">Keeper</li>
-
-            <li (click)="showTee('star')"
-                class="color-border color-width center-text bottom-padding">Bright</li>
-
-            <li (click)="showTee('space-invader')"
-                class="color-border color-width center-text bottom-padding">Space Invader</li>
+                class="color-border color-width center-text">Sunshine
+                 <img 
+                        src="/assets/images/teeshirts/sun-1837376_1280.png"
+                        height="50em" width="50em">
+                 </li>
+            <li (click)="showTee('heartPic')" style="height: 5em"
+                class="color-border color-width center-text">Love
+                    <img 
+                        src="/assets/images/teeshirts/heart-1288420_1280.jpg"
+                        height="40em" width="45em">
+            </li>
+            <li (click)="showTee('diamond')" style="height: 5em"
+                class="color-border color-width center-text">Sparkly
+               <img src="/assets/images/teeshirts/diamond-161739_1280.png"
+                        height="40em" width="45em">
+            </li>
+            <li (click)="showTee('lock')" style="height: 5em"
+                class="color-border color-width center-text">Keeper
+                    <img src="/assets/images/teeshirts/padlock-428549_1280.jpg"
+                        height="40px" width="40px">
+            </li>
+            <li (click)="showTee('star')" style="height: 5em"
+                class="color-border color-width center-text">Bright
+                    <img src="/assets/images/teeshirts/star-1870164_1280.jpg"
+                        height="40px" width="40px">
+            </li>
+            <li (click)="showTee('space-invader')" style="height: 7em"
+                class="color-border color-width center-text">Space Invader
             
+                    <img src="/assets/images/teeshirts/invader-42007_1280.png"
+                        height="50px" width="50px">
+            </li>
         </ol>
         </div>
     </div>
     <div class="two">
-        <br />
-        <br />
-        <div style="float: right">
+        <div *ngIf="!homeData.buyTShirt.editing" style="float: right;">
             <button class="orange" (click)="homeData.addToCart()">Buy It</button>
         </div>
-        <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+        <div *ngIf="homeData.buyTShirt.editing" style="float: right;">
+            <button class="orange" (click)="homeData.validate()">Update Cart</button>
+        </div>
+        
+        <div *ngIf="homeData.buyTShirt.design != 'star' && homeData.buyTShirt.design != 'space-invader'">
             <div 
-                *ngIf="homeData.base" 
+                *ngIf="homeData.buyTShirt.base" 
                 class = "t-shirt-base"
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
             <div 
-                *ngIf="!homeData.base" 
+                *ngIf="!homeData.buyTShirt.base" 
                 class="t-shirt-size" 
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
         </div>
-        <div *ngIf="homeData.designChoice == 'space-invader'"
-            class="t-shirt-large" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
-           
+
+         <div *ngIf="homeData.buyTShirt.design == 'space-invader'"
+                class="t-shirt-large" 
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
         </div>
-        <div
-            *ngIf="homeData.designChoice == 'star'" 
-            class="cropped-star" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+       <div *ngIf="homeData.buyTShirt.design == 'star'"
+                class="cropped-star" 
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
         </div>
-       
     </div>
 </section>

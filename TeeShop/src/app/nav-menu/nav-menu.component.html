@@ -5,6 +5,7 @@
       <div class="container" >
                 
           <a class="navbar-brand" [routerLink]="['/']">TeeShop</a>
+          <button style="background-color: burlywood; color: black;" (click)="homeData.clearTshirt()">New Tee</button>
           <a class="nav-link text-dark" [routerLink]="['/color']">Color</a>
           <a class="nav-link text-dark" [routerLink]="['/design' ]">Design</a>
           <a class="nav-link text-dark" [routerLink]="['/size']">Size</a>

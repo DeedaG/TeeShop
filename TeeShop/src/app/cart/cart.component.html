@@ -5,7 +5,8 @@
    
     <div style="padding: 10px;">
         <h1>Shopping Cart</h1>
-        <h2 style="color:green">{{homeData.message}}</h2>
+        <h2 *ngIf="homeData.message == 'Great choices!'" style="color:green">{{homeData.message}}</h2>
+        <h2 *ngIf="homeData.message != 'Great choices!'" style="color:red">{{homeData.message}}</h2>
 
         <p aria-live="polite">
             Current items:
@@ -28,10 +29,10 @@
                     <td (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem"
                         class="cells">{{item.color}}
                     </td>
-                    <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
+                    <td class="cells" (click)="selectItem(item)" [routerLink]="['/design']" [class.selected]="item === selectedItem">
                         {{getDisplayDesign(item)}}
                     </td>
-                    <td class="cells" (click)="selectItem(item)" [routerLink]="['/color']" [class.selected]="item === selectedItem">
+                    <td class="cells" (click)="selectItem(item)" [routerLink]="['/size']" [class.selected]="item === selectedItem">
                         {{item.teeSize}}
                     </td>
 

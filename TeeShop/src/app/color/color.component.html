@@ -5,57 +5,75 @@
     <div class="one">
         <div class="one-scroll">
         <ol>
-            <li (click)="homeData.clearTshirt()"
-                class="color-border color-width center-text bottom-padding">Clear All Choices</li>
+           
             <li (click)="clearColor()"
                 class="color-border color-width center-text bottom-padding">Clear Color</li>
-            <li (click)="showTee('red')"
-                class="red color-border color-width center-text bottom-padding">Red</li>
+            <li (click)="showTee('red')" style="height: 5em"
+                class="color-border color-width center-text bottom-padding">Red
+                 <img src="/assets/images/teeshirts/checks-316861_1280.jpg"
+                        height="40px" width="40px">
+            </li>
 
-            <li (click)="showTee('orange')"
-                class="orange color-border color-width center-text bottom-padding">Orange</li>
+            <li (click)="showTee('orange')" style="height: 5em;"
+                class="color-border color-width center-text bottom-padding">Orange
+                <img src="/assets/images/teeshirts/checks-316855_1280.jpg"
+                        height="40px" width="40px">
+            </li>
 
-            <li (click)="showTee('yellow')"
-                class="yellow color-border color-width center-text bottom-padding">Yellow</li>
+            <li (click)="showTee('yellow')" style="height: 5em;"
+                class="color-border color-width center-text bottom-padding">Yellow
+                <img src="/assets/images/teeshirts/pattern-7039741_1280.png"
+                        height="40px" width="40px">
+            </li>
 
-            <li (click)="showTee('green')"
-                class="green color-border color-width center-text bottom-padding">Green</li>
+            <li (click)="showTee('green')" style="height: 5em;"
+                class="color-border color-width center-text bottom-padding">Green
+                <img src="/assets/images/teeshirts/green-2847123_1280.jpg"
+                        height="40px" width="40px">
+            </li>
 
-            <li (click)="showTee('blue')"
-                class="blue color-border color-width center-text bottom-padding">Blue</li>
+            <li (click)="showTee('blue')" style="height: 5em;"
+                class="color-border color-width center-text bottom-padding">Blue
+            <img src="/assets/images/teeshirts/jeans-1161035_1280.jpg"
+                        height="40px" width="40px">
+            </li>
 
-            <li (click)="showTee('pink')"
-                class="pink color-border color-width center-text bottom-padding">Pink</li>
+            <li (click)="showTee('pink')" style="height: 5em;"
+                class="color-border color-width center-text bottom-padding">Pink
+            <img src="/assets/images/teeshirts/checks-316856_1280.jpg"
+                        height="40px" width="40px">
+            </li>
         </ol>
         </div>
     </div>
     <div class="two">
-        <div style="float: right">
+        <div *ngIf="!homeData.buyTShirt.editing" style="float: right;">
             <button class="orange" (click)="homeData.addToCart()">Buy It</button>
         </div>
-        <br />
-        <br />
-        <div *ngIf="homeData.designChoice != 'star' && homeData.designChoice != 'space-invader'">
+        <div *ngIf="homeData.buyTShirt.editing" style="float: right;">
+            <button class="orange" (click)="homeData.validate()">Update Cart</button>
+        </div>
+        <div *ngIf="homeData.buyTShirt.design != 'star' && homeData.buyTShirt.design != 'space-invader'">
             <div 
-                *ngIf="homeData.base" 
+                *ngIf="homeData.buyTShirt.base" 
                 class = "t-shirt-base" 
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
             <div 
-                *ngIf="!homeData.base" 
+                *ngIf="!homeData.buyTShirt.base" 
                 class = "t-shirt-size" 
-                [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+                [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
             </div>
         </div>
-       <div *ngIf="homeData.designChoice == 'space-invader'"
+       <div *ngIf="homeData.buyTShirt.design == 'space-invader'"
             class="t-shirt-large" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
 
         </div>
         <div 
-            *ngIf="homeData.designChoice == 'star'" 
+            *ngIf="homeData.buyTShirt.design == 'star'" 
             class="cropped-star" 
-            [ngStyle]="{'background-image': 'url(' + homeData.designChoiceURL + '), url(' + homeData.colorChoiceURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
+            [ngStyle]="{'background-image': 'url(' + homeData.buyTShirt.designURL + '), url(' + homeData.buyTShirt.colorURL + '), url(/assets/images/teeshirts/t-shirt-9611374_1280.jpg)'}">
         </div>
       
     </div>
