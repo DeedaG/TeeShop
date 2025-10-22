@@ -9,7 +9,9 @@
         <button (click)="setSize('medium')" style="background-color: burlywood">Medium</button>
            
         <button (click)="setSize('large')" style="background-color: burlywood">Large</button>
-            
+        <br />
+        <br />
+        <h1 style="color: burlywood">Size: {{homeData.buyTShirt.teeSize}}</h1>
        </div>
         
     </div>
@@ -21,9 +23,6 @@
         <div *ngIf="homeData.buyTShirt.editing" style="float: right">
             <button class="orange" (click)="homeData.validate()">Update Cart</button>
         </div>
-        <br />
-        <br />
-        <h1 style="color: burlywood">Size: {{homeData.buyTShirt.teeSize}}</h1>
         <div *ngIf="homeData.buyTShirt.design != 'star' && homeData.buyTShirt.design != 'space-invader'">
             <div 
                 *ngIf="homeData.buyTShirt.base" 
